@@ -3,7 +3,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { connect } from 'react-redux';
 import { useState } from 'react';
-import contsctsActions from '../../redux/contacts/contacts-actions';
+import contactsActions from '../../redux/contacts/contacts-actions';
 import s from './Phonebook.module.css';
 
 const Phonebook = ({ onSubmit, contacts, title }) => {
@@ -16,11 +16,15 @@ const Phonebook = ({ onSubmit, contacts, title }) => {
     if (checkContactName()) {
       return;
     }
-
+     
+    if (name && number !== '') {
     onSubmit(name, number);
-
     setName('');
     setNumber('');
+    }
+
+    alert('Please fill in the required fields!');
+    
   };
 
   const checkContactName = () => {
@@ -83,7 +87,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-onSubmit: (name, number) => dispatch(contsctsActions.addContact(name, number)),
+onSubmit: (name, number) => dispatch(contactsActions.addContact(name, number)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Phonebook);

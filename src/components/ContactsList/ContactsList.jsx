@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import IconButton from '../IconButton/IconButton';
 import { connect } from 'react-redux';
 import { ReactComponent as DeleteIcon } from '../../icon/delete.svg';
-import contsctsActions from '../../redux/contacts/contacts-actions';
+import contactsActions from '../../redux/contacts/contacts-actions';
 import s from './ContactsList.module.css';
 
 const ContactsList = ({ contacts, onDeleteContact }) => {
@@ -45,7 +45,7 @@ const mapStateToProps = ({ contacts: {items, filter} }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-onDeleteContact: (id) => dispatch(contsctsActions.deleteContact(id)),
+onDeleteContact: (id) => dispatch(contactsActions.deleteContact(id)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);

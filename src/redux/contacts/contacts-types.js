@@ -1,7 +1,9 @@
-const ADD = 'contacts/add';
-const DELETE = 'contacts/delete';
-const CHANGE_FILTER = 'contacts/changeFilter'
+// c использованием библиотек redux и  react-redux
 
-const types = { ADD, DELETE, CHANGE_FILTER };
+// const ADD = 'contacts/add';
+// const DELETE = 'contacts/delete';
+// const CHANGE_FILTER = 'contacts/changeFilter'
 
-export default types;
+// const types = { ADD, DELETE, CHANGE_FILTER };
+
+// export default types;
